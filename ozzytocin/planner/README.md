@@ -1,6 +1,6 @@
 # Planner
 
-The website is live [here] (ozzytoc.in/planner)
+The website is live [here] (http://ozzytoc.in/planner)
 * The folder named "boostrap" is not my work and will be removed from repository
 
 # Notable Files:
