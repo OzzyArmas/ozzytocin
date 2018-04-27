@@ -1,0 +1,42 @@
+{% block asset_form %}
+    <hr class="mb-6">
+    <div class="row">
+      <div class="col-md-6 mb-5">
+        <label for="assetName">Asset Source</label>
+        <input type="text" class="form-control AssetName"  placeholder="" value="" required>
+        <div class="invalid-feedback">
+          Please indicate  a asset Source
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <label for="lastName">Amount</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" > $ </span>
+          </div>
+          <input type="text" class="form-control AssetAmount" placeholder="" value=0.0 required>
+          <div class="invalid-feedback">
+            Please enter a valid amount
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-6 mb-5">
+      </div>
+      <div class="col-md-6 mb-4">
+        <label for="interestRate">Interest Rate</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" > % </span>
+          </div>
+          <input type="text" class="form-control AssetInterest" placeholder="" value=0.0 required>
+          <div class="invalid-feedback">
+            Please enter a valid interest
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

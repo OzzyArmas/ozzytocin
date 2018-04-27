@@ -1,0 +1,38 @@
+{% block dropdown %}
+<div class="row d-flex justify-content-end mb-4">
+  <div class="col-md-6">
+  </div>
+  <div class="dropdown show col-2">
+    <a class="btn btn-primary dropdown-toggle col-md-12"
+     href="#" role="button" id="dropdownMenuLink"
+     data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      add
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+      <button class="dropdown-item" type = "button" onclick="triggerLoanFormDisplay()">
+        Loan
+      </button>
+
+      <button class="dropdown-item" type="button" onclick="triggerAssetFormDisplay()">
+        Asset
+      </button>
+
+      <button class="dropdown-item" type="button" onclick="triggerIncomeFormDisplay()">
+        Income
+      </button>
+      <button class="dropdown-item" type="button" onclick="triggerExpenseFormDisplay()">
+        Expenses
+      </button>
+      <div class="dropdown-divider"></div>
+      <button class="dropdown-item" onclick="submitForm('/plan')" type="button">
+        Done
+      </button>
+
+    </div>
+  </div>
+    <!-- Coded Action -->
+  </div>
+{% endblock %}

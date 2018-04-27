@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../static/img/calculator.png">
+
+    <title>Loan Planner</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../static/css/form.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="../../static/img/calculator.png" alt="" width="72" height="72">
+        <h2>Loan Information</h2>
+        <p class="lead">Please complete all fields</p>
+      </div>
+
+      <div class="row">
+        <!-- INCLUDE TOTALS.HTML HERE -->
+        <div class="col-md-12 order-md-1">
+          <h4 class="mb-4 text-muted">Loan Information</h4>
+          <form class="needs-validation" novalidate>
+          <div id="form_list">
+            <div class = "LoanForm">
+              {% include "planner/includes/loan_form.html" %}
+            </div>
+          </div>
+             {% include "planner/includes/drop_down.html" %}
+          </form>
+        </div>
+      </div>
+    </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; W </p>
+        <!-- <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul> -->
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Personal JS -->
+    <script name= "JinJa2 Scripting">
+    function triggerLoanFormDisplay () {
+       var loanForm = document.getElementById('form_list');
+       var formToAdd = document.createElement('div');
+       formToAdd.classList.add("LoanForm");
+       formToAdd.innerHTML = `{% include "planner/includes/loan_form.html" %}
+       `
+       loanForm.appendChild(formToAdd);
+    }
+    function triggerAssetFormDisplay () {
+       var loanForm = document.getElementById('form_list');
+       var formToAdd = document.createElement('div');
+       formToAdd.classList.add("AssetForm");
+       formToAdd.innerHTML = `{% include "planner/includes/asset_form.html" %}
+       `
+       loanForm.appendChild(formToAdd);
+    }
+    function triggerIncomeFormDisplay () {
+       var loanForm = document.getElementById('form_list');
+       var formToAdd = document.createElement('div');
+       formToAdd.classList.add("IncomeForm");
+       formToAdd.innerHTML = `{% include "planner/includes/income_form.html" %}
+       `
+       loanForm.appendChild(formToAdd);
+    }
+    function triggerExpenseFormDisplay () {
+       var loanForm = document.getElementById('form_list');
+       var formToAdd = document.createElement('div');
+       formToAdd.classList.add("ExpenseForm");
+       formToAdd.innerHTML = `{% include "planner/includes/expenses_form.html" %}
+       `
+       loanForm.appendChild(formToAdd);
+    }
+    </script>
+    <script src = "../../static/js/form_handler.js"></script>
+    <!-- <script
+      src="http://code.jquery.com/jquery-3.3.1.slim.js"
+      integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+      crossorigin="anonymous">
+    </script> -->
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <!-- <script>window.jQuery || document.write('<script src="../../static/bootstrap/assets/js/vendor/jquery-slim.min.js"><\/script>')</script> -->
+    <script src="../../static/bootstrap/assets/js/vendor/popper.min.js"></script>
+    <script src="../../static/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../static/bootstrap/assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>
