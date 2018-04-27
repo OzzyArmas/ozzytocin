@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+import os
 import planner
 import pandas as pd
 import json
@@ -27,8 +28,9 @@ def repayment():
         income_data = planner.income_handler(form['incomes'])
         norm_df, ira_df = planner.plan(loan_data, asset_data,\
                                        income_data, expense_data)
-        # print(norm_df)
-        # print(ira_df)
+        print(norm_df)
+        print(ira_df)
+        os.chdir("/var/www/ozzytocin/ozzytocin")
         f = open("static/temp/savings.csv", 'w+')
         f2 = open("static/temp/ira_option.csv", 'w+')
         norm_df.to_csv(f)
