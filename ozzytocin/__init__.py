@@ -11,9 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def landing():
-  return """
-      <h> Hellow World! </h>
-      """
+  return render_template("stylish/index.html")
 @app.route("/planner", methods=["GET", "POST"])
 def repayment():
     if request.method == 'GET':
