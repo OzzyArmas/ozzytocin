@@ -12,6 +12,8 @@ app = Flask(__name__)
 @app.route("/")
 def landing():
   return render_template("stylish/index.html")
+
+
 @app.route("/planner", methods=["GET", "POST"])
 def repayment():
     if request.method == 'GET':
@@ -34,6 +36,8 @@ def repayment():
         norm_df.to_csv(f)
         ira_df.to_csv(f2)
         return ''
+
+
 @app.route("/plan")
 def sample_plan():
     return render_template("planner/plan.html")
